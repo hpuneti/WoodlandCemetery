@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <!-- JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="./jquery.maphighlight.js"></script>
+  <script src="./script.js"></script>
+
+  <!-- Header Message --> 
+  <div id="header-message-container">
+    <div id="header-message">
+      <span id="header-message-text"></span>
+      <span id="header-message-hide">X</span>
+    </div>
+  </div>
+  
+  <!-- Search User Form -->
+  <form action="#" id="search-form">
+    <label for="name">Name:</label>
+    <datalist id="name-list"></datalist>
+    <input name="name" id="name-input" list='name-list'>
+    <br>
+    <br>
+    
+    <div id="submit-button-container">
+      <input id="submit-search-form" type="button" value="Submit">
+    </div>
+    <p id="show-notable-burials">See Notable Burials</p>
+  </form>  
+
+  <!-- Admin Login Form -->
+  <div id="admin-login-container">
+    <form id="admin-login">
+        <label for="admin-password">
+          <b><p id="admin-login-text">Admin Login</p></b>
+        </label>
+      
+        <input type="password" name="admin-password" id="admin-password" placeholder="Password">
+
+        <p id="admin-alert">Incorrect password</p>
+      
+        <div id="submit-admin-password-container">
+          <button id="submit-admin-password" type="button">Submit</button>
+        </div>
+
+        <p id="admin-login-hide">X</p>
+    </form>
+  </div>
+
+  <input id="open-admin-login" type="button" value="Admin Login">
+
+  <!-- Person Info -->
+  <div id="person-data-container">
+    <p id="person-matches-found"></p>
+    
+    <template id="person-data-record-template">
+      <div class="person-data-record">
+        <hr class="gray-hr">
+        
+        <h2 class="person-name">First Name Last Name</h2>
+        <div class="person-info">
+          <p class="person-section">Section: </p>
+          <p class="person-lot-num">Lot Number: </p>
+          <p class="person-title">Title: </p>
+          <p class="person-grave-number">Grave Number: </p>
+          <p class="person-death-date">Death Date: </p>
+          <p class="person-notes">Notes: </p>
+        </div>
+        
+        <a class="find-a-grave-link" target="_blank"><br>FindAGrave.com</a>
+        <div class="sketchfab-view-container">
+          <br>
+          <button class="sketchfab-view">View 3D Grave</button>
+        </div>
+      </div>
+    </template>
+
+    <div id="person-records"></div>
+    <hr class="gray-hr">
+
+    <div id="person-data-hide">X</div>
+  </div>
+  
+  <!-- Plot Info -->
+  <div id="plot-data-container">
+    <div id="plot-data">
+        <h2 id="plot-name"></h2>
+        <div id="plot-inhabitants-container">
+          <ul id="plot-inhabitants"></ul>
+        </div>
+    
+        <div id="plot-data-hide">X</div>
+    </div>
+  </div>
+
+  <!-- Sketchfab Embed -->
+  <div id="sketchfab-embed-container"> 
+    <div id="sketchfab-embed-background">
+      <h1 id="sketchfab-title"></h1>
+      <iframe id="sketchfab-embed" title="" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src=""></iframe> 
+    
+      <div id="sketchfab-hide">X</div>
+    </div>
+  </div>
+
+  <!-- Zoom Buttons -->
+  <div id="zoom-container">
+    <div id="zoom-in">+</div>
+    <div id="zoom-out">-</div>
+  </div>
+
+  <!-- Landmarks -->
+  <div id="landmark-info">
+    <p id="landmark-name">Landmark</p>
+  </div>
+
+  <!-- Loading -->
+  <div id='loading'>
+    <p id='loading-text'>
+      Loading...
+    </p>
+  </div>
+
+  <div id='parent' width='100%' height='100%'>
+    <div id='center' class="center">
+
+      <!-- Image -->
+      <img src="./map.jpg" class='map' id="map" alt="Woodland Cemetery" usemap="#map" width="1632px" height="866px" style='-webkit-overflow-scrolling: touch;'>
+    </div>
+  </div>
+
+  <!-- Map -->
+  <map name="map"></map>
+</body>
+
+</html>
